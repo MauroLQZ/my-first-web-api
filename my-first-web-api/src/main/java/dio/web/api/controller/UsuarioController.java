@@ -37,7 +37,10 @@ public class UsuarioController {
     public void postUser(@RequestBody Usuario usuario){
         repository.save(usuario);
     }
-    	
+	@PutMapping()
+    public void put(@RequestBody Usuario usuario){
+        repository.save(usuario);
+    }	
 	
 
 	
@@ -49,10 +52,7 @@ public class UsuarioController {
     public void post(@RequestBody Usuario usuario){
         repository.save(usuario);
     }
-    @PutMapping("/usuarios")
-    public void put(@RequestBody Usuario usuario){
-        repository.save(usuario);
-    }
+    
     @GetMapping("/usuarios")
     public List<Usuario> getAll(){
         return repository.findAll();
